@@ -197,6 +197,237 @@
           rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
           rgba(0, 0, 0, 0.09) 0px 32px 16px;
       }
+      .project-section {
+      padding: 80px 0;
+      background-color: #f8f9fa;
+    }
+
+    .project-item {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      height: 300px;
+      cursor: pointer;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+    }
+
+    .project-item:hover .project-img {
+      transform: scale(1.1);
+    }
+
+    .project-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .project-item:hover .project-overlay {
+      opacity: 1;
+    }
+
+    .project-title {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-category {
+      color: #18d26e;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .section-title {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      color: #05579e;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #18d26e;
+      bottom: 0;
+      left: calc(50% - 25px);
+    }
+
+    .section-title p {
+      margin-bottom: 0;
+      color: #6c757d;
+    }
+
+    /* Modal Styles */
+    .project-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      position: relative;
+      background-color: #fff;
+      margin: 5% auto;
+      width: 90%;
+      max-width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      animation: modalFadeIn 0.5s;
+    }
+
+    @keyframes modalFadeIn {
+      from {opacity: 0; transform: translateY(-50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .modal-header {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #05579e;
+      margin: 0;
+    }
+
+    .close-modal {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #6c757d;
+      transition: color 0.3s;
+    }
+
+    .close-modal:hover {
+      color: #05579e;
+    }
+
+    .modal-body {
+      padding: 30px;
+    }
+
+    .project-image-container {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .project-image-large {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .project-details {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .project-summary, .project-features {
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .project-summary h3, .project-features h3 {
+      color: #05579e;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 20px;
+      border-bottom: 2px solid #18d26e;
+      padding-bottom: 8px;
+    }
+
+    .project-summary p {
+      line-height: 1.6;
+      color: #495057;
+    }
+
+    .project-features ul {
+      padding-left: 20px;
+    }
+
+    .project-features li {
+      margin-bottom: 10px;
+      line-height: 1.5;
+      color: #495057;
+    }
+
+    .project-tech {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e9ecef;
+      border-radius: 8px;
+    }
+
+    .project-tech h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #05579e;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tech-tag {
+      background-color: #05579e;
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
     </style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -518,98 +749,7 @@
           </div>
         </div>
 
-        <!-- <div class="row">
-			<h1 class="big-4">Experience</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2022-Present</span>
-						<h2>Data Analyst</h2>
-<span class="position">Jewish Social Service Agency (Remote)</span>
-<p class="mt-4">
-Worked in a remote capacity at JSSA, supporting data initiatives and strategic decision-making across social service programs using tools such as Power BI, SQL Server, Tableau, and EHR (Netsmart).
-<ul>
-    <li>Collected data from multiple sources including databases, surveys, and service records to support business needs.</li>
-    <li>Reviewed and cleaned datasets by removing duplicates and correcting errors to ensure high data quality.</li>
-    <li>Created databases, tables, and views in MySQL; optimized SQL queries to extract and transform critical data.</li>
-    <li>Built and published Power BI dashboards with automated refresh schedules via the Power BI gateway.</li>
-    <li>Developed DAX measures and derived columns for interactive reporting and KPIs.</li>
-    <li>Conducted statistical analysis and data modeling to identify trends, inform decisions, and guide strategy.</li>
-    <li>Ensured compliance with data privacy policies and maintained best practices in data governance.</li>
-    <li>Documented data methodologies and maintained clear records for transparency and reproducibility.</li>
-    <li>Trained internal staff on data tools and visualization best practices to improve data literacy across teams.</li>
-    <li>Monitored key performance indicators and risk metrics to support leadership decision-making.</li>
-    <li>Regularly engaged in team meetings to align on priorities and contribute data-driven insights.</li>
-    <li>Managed and refreshed dashboards, ensuring timely and secure access for stakeholders.</li>
-    <li>Utilized Jira and SharePoint to track projects and streamline collaboration across teams.</li>
-    <li>Integrated EHR systems (Netsmart) to enhance data extraction, reporting, and analysis capabilities.</li>
-</ul>
-</p>
-
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2019-2022</span>
-						<h2>Data Analyst</h2>
-						<span class="position">UnitedHealth Group (Remote) |  </span>
-						<p class="mt-4">
-						UnitedHealth Group is a global leader in healthcare services and innovations, where I supported cross-functional analytics initiatives across multiple departments using tools like SQL Server, Tableau, Power BI, and Domo.
-						<ul>
-								<li>Provided strategic BI recommendations by performing advanced analytics to assess client operations and uncover improvement opportunities.</li>
-								<li>Collected and integrated data from multiple sources for matching and cleansing to ensure data integrity and readiness for analysis.</li>
-								<li>Developed complex SQL queries to extract, transform, and analyze data from data warehouses aligned with business needs.</li>
-								<li>Automated supply chain dashboards using SSMS and Tableau, improving reporting efficiency and real-time tracking.</li>
-								<li>Conducted in-depth statistical analysis to identify patterns and significant relationships within large data sets.</li>
-								<li>Created self-service reporting tools and automated key reports, reducing manual effort and response time.</li>
-								<li>Built and deployed secure Power BI dashboards with role-level content promotion and access control.</li>
-								<li>Delivered training to internal teams on BI tools, including Power BI, Tableau, and Excel for improved data adoption.</li>
-								<li>Supported ongoing IT operations including reporting cycles and system monitoring tasks.</li>
-								<li>Collaborated with business stakeholders to define data standards, conceptual models, and workflow requirements.</li>
-								<li>Used Excel for advanced reporting using VLOOKUP, PivotTables, charts, and custom calculations.</li>
-								<li>Engaged directly with clients and IT teams to understand data needs, resolve issues, and deliver clear reporting outputs.</li>
-								<li>Documented processes and analytical methods to support audits, data governance, and repeatable practices.</li>
-								<li>Designed and maintained interactive sales dashboards in Power BI, enhancing visibility into performance metrics.</li>
-						</ul>
-						</p>
-						
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2017-2019</span>
-						<h2>Data Analyst</h2>
-						<span class="position">HealthEquity (Remote) |  </span>
-						<p class="mt-4">
-						HealthEquity is a leading provider of health savings account (HSA) and consumer-directed benefits solutions. At HealthEquity, I supported analytics and reporting functions, leveraging SQL, Tableau, Power BI, and Excel to drive actionable insights.
-						<ul>
-								<li>Created BI reports in Tableau using advanced functions including unions, counts, groups, and conditional logic (IF).</li>
-								<li>Designed complex data models and dashboards in Tableau to support business intelligence needs.</li>
-								<li>Wrote optimized SQL queries with multiple joins and functions to extract and analyze data from SQL Server.</li>
-								<li>Extracted and transformed large datasets from SQL Server for reporting and ad-hoc analysis.</li>
-								<li>Collaborated with analytics team to gather data requirements and create scalable reporting solutions.</li>
-								<li>Supported data teams with reporting best practices, source validation, and analytical methodology.</li>
-								<li>Developed Excel-based BI analysis using VLOOKUP, PivotTables, charts, and custom reporting views.</li>
-								<li>Performed data migration, testing, and validation using VBA between Microsoft Access and Excel environments.</li>
-								<li>Imported and cleaned data from flat files and spreadsheets into Access and SQL Server databases.</li>
-								<li>Managed multiple tasks including sales analysis across regions, while communicating findings clearly to technical and non-technical stakeholders.</li>
-								<li>Performed rigorous data quality checks to ensure reporting accuracy and integrity.</li>
-						</ul>
-						</p>
-						
-					</div>
-
-				</div>
-
-			</div> -->
+        
 
         <br />
         <br />
@@ -682,133 +822,477 @@ Worked in a remote capacity at JSSA, supporting data initiatives and strategic d
       </div>
     </section>
 
+    <!-- project section start -->
+
     <section class="ftco-section" id="project-section">
+
       <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>
-              Below are the sample Data Analytics projects on SQL, Python, Power
-              BI & ML.
-            </p>
-          </div>
+        <div class="section-title" data-aos="fade-up">
+          <span>Portfolio</span>
+          <h2>Recent Projects</h2>
+          <p>Aviation analytics and data visualization projects</p>
         </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a
-                href=""
-                class="block-20 zoom-effect"
-                style="background-image: url('images/proj_1.jpg')"
-              >
-                <!-- https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql -->
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading">
-                  <a href="">Digital Music Store Data Analysis using SQL</a>
-                </h3>
-                <p>
-                  Analyzed music store data using advanced SQL queires to
-                  identify gaps and increase the business growth.
-                </p>
-                <!-- https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql -->
+    
+        <div class="row">
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="project-item" data-project="1">
+              <img src="./images/project1.png" class="project-img" alt="Air Traffic Dashboard">
+              <div class="project-overlay">
+                <h3 class="project-title">HR Analytics Dashboard
+</h3>
+                <p class="project-category">Tableau, Excel</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a
-                href=""
-                class="block-20 zoom-effect"
-                style="background-image: url('images/proj_2.jpg')"
-              >
-                <!-- https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb -->
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading">
-                  <a href=""
-                    >Data Analysis using Python Project for Beginners</a
-                  >
-                </h3>
-                <p>
-                  Performed exploratory data analysis on diwali sales data using
-                  Python to improve the customer experience.
-                </p>
-                <!-- https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb -->
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="project-item" data-project="2">
+              <img src="./images/project2.png" class="project-img" alt="Flight Performance Analytics">
+              <div class="project-overlay">
+                <h3 class="project-title">Sales Forecasting Dashboard
+</h3>
+                <p class="project-category">Power BI, SQL</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry">
-              <a
-                href=""
-                class="block-20 zoom-effect"
-                style="background-image: url('images/proj_3.jpg')"
-              >
-                <!-- https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg -->
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading">
-                  <a href="">Power BI Sales dashboard Project for Beginners</a>
-                </h3>
-                <p>
-                  Designed a power bi dashboard for Madhav Store to track and
-                  analyze the online sales data acorss India.
-                </p>
-                <!-- https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg -->
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="project-item" data-project="3">
+              <img src="./images/project3.png" class="project-img" alt="Aircraft Maintenance Tracker">
+              <div class="project-overlay">
+                <h3 class="project-title">Employee Productivity Insights
+</h3>
+                <p class="project-category">Power BI, Excel</p>
               </div>
             </div>
           </div>
-        </div>
-        <br />
-        <!-- added justify-content-center to center align the last two projects -->
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a
-                href=""
-                class="block-20 zoom-effect"
-                style="background-image: url('images/proj_4.jpg')"
-              >
-                <!-- https://github.com/rishabhnmishra/sales_forecasting/tree/main -->
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading">
-                  <a href="">Sales Forecast- Time Series Forecasting</a>
-                </h3>
-                <!-- https://github.com/rishabhnmishra/sales_forecasting/tree/main -->
-                <p>
-                  Used multiple machine learning models to forecast sales
-                  (retail store) and performed time series analysis.
-                </p>
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="project-item" data-project="4">
+              <img src="./images/project4.png" class="project-img" alt="Aviation Safety Analysis">
+              <div class="project-overlay">
+                <h3 class="project-title">Customer Segmentation Dashboard</h3>
+                <p class="project-category">Tableau, SQL</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
-            <div class="blog-entry justify-content-end">
-              <a
-                href=""
-                class="block-20 zoom-effect"
-                style="background-image: url('images/proj_5.jpg')"
-              >
-                <!-- https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb -->
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading">
-                  <a href="">Customer Segmentation using clustering model</a>
-                </h3>
-                <!-- https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb -->
-                <p>
-                  Developed a ML model to give various recommendations of
-                  financial products &amp; services on target customer groups.
-                </p>
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="project-item" data-project="5">
+              <img src="./images/project5.png" class="project-img" alt="Supersonic Flow Simulation">
+              <div class="project-overlay">
+                <h3 class="project-title">Inventory Management Dashboard
+</h3>
+                <p class="project-category">MATLAB, Data Modeling</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="project-item" data-project="6">
+              <img src="./images/project6.png" class="project-img" alt="Airport Operations Dashboard">
+              <div class="project-overlay">
+                <h3 class="project-title">Finance Performance Tracker</h3>
+                <p class="project-category">Power BI, Excel</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+            <div class="project-item" data-project="7">
+              <img src="./images/project7.jpg" class="project-img" alt="Navigation Systems Performance">
+              <div class="project-overlay">
+                <h3 class="project-title">Marketing Campaign Dashboard</h3>
+                <p class="project-category">SQL, Power BI</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
+            <div class="project-item" data-project="8">
+              <img src="./images/project8.jpg" class="project-img" alt="Aerodynamic Analysis Report">
+              <div class="project-overlay">
+                <h3 class="project-title">Clinic Operations Dashboard</h3>
+                <p class="project-category">MATLAB, Excel</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
+            <div class="project-item" data-project="9">
+              <img src="./images/project9.jpg" class="project-img" alt="Flight Route Optimization">
+              <div class="project-overlay">
+                <h3 class="project-title">Recruitment Funnel Dashboard</h3>
+                <p class="project-category">Tableau, SQL, Python</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section><!-- End Project Section -->
+
+    <!-- Project Modals -->
+   <!-- ✅ PROJECT MODALS SECTION (All 9 Dashboards) -->
+
+<!-- Project Modal 1 -->
+<div id="project-modal-1" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">HR Analytics Dashboard</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project1.png" class="project-image-large" alt="HR Analytics Dashboard">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>The HR Analytics Dashboard provides actionable insights into employee performance, attrition trends, diversity ratios, and workforce demographics. It enables HR managers to monitor KPIs such as retention rate, employee satisfaction, and hiring pipeline efficiency for strategic workforce planning.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Attrition and retention analysis</li>
+            <li>Workforce demographic visualization</li>
+            <li>Employee satisfaction trend tracking</li>
+            <li>Recruitment and training analysis</li>
+            <li>Department-level KPI insights</li>
+            <li>Dynamic filtering by role, location, and tenure</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Tableau</span>
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">Data Cleaning</span>
+          <span class="tech-tag">Visualization</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal 2 -->
+<div id="project-modal-2" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Sales Forecasting Dashboard</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project2.png" class="project-image-large" alt="Sales Forecasting Dashboard">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>This dashboard empowers businesses with predictive insights into future sales performance using historical data and trend analysis. It supports better inventory planning, revenue projections, and target setting through visual forecasts and key performance comparisons.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Monthly and quarterly revenue forecasts</li>
+            <li>Product and region-wise sales analysis</li>
+            <li>Profit margin tracking</li>
+            <li>Sales pipeline visualization</li>
+            <li>Target vs. actual performance monitoring</li>
+            <li>Predictive insights using SQL queries</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">Predictive Analytics</span>
+          <span class="tech-tag">Data Modeling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal 3 -->
+<div id="project-modal-3" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Employee Productivity Insights</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project3.png" class="project-image-large" alt="Employee Productivity Dashboard">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>This dashboard measures employee productivity metrics such as task completion rate, project efficiency, and work-hour utilization. It helps managers identify performance bottlenecks, track individual and team outputs, and improve organizational effectiveness.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Individual vs. team performance comparison</li>
+            <li>Daily/weekly productivity trends</li>
+            <li>Attendance and time-tracking analysis</li>
+            <li>Employee workload visualization</li>
+            <li>Custom filters for role, department, and KPI</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">Data Visualization</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal 4 -->
+<div id="project-modal-4" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Customer Segmentation Dashboard</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project4.png" class="project-image-large" alt="Customer Segmentation Dashboard">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>The Customer Segmentation Dashboard classifies customers based on demographics, purchase behavior, and engagement patterns. It enables marketing teams to design targeted campaigns and improve conversion through data-driven insights.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Customer grouping using RFM (Recency, Frequency, Monetary) analysis</li>
+            <li>Behavior-based segmentation</li>
+            <li>Customer lifetime value visualization</li>
+            <li>Campaign performance tracking</li>
+            <li>Geographical customer insights</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Tableau</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">Data Mining</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal 5 -->
+<div id="project-modal-5" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Inventory Management Dashboard</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project5.png" class="project-image-large" alt="Inventory Management Dashboard">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>This dashboard streamlines inventory tracking, reorder planning, and warehouse efficiency. It helps organizations optimize stock levels, minimize carrying costs, and prevent stockouts through automated inventory insights.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Real-time stock monitoring</li>
+            <li>Low-stock alerts and reorder recommendations</li>
+            <li>Supplier and item-level analysis</li>
+            <li>Warehouse utilization tracking</li>
+            <li>Demand forecasting using historical data</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">MATLAB</span>
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">Data Modeling</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal 6 -->
+<div id="project-modal-6" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Finance Performance Tracker</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project6.png" class="project-image-large" alt="Finance Performance Tracker">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>The Finance Performance Tracker visualizes revenue, expenses, profit margins, and budget utilization. It empowers finance teams to analyze spending efficiency, forecast financial performance, and improve cost management.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Expense vs. revenue trend analysis</li>
+            <li>Profit margin tracking by category</li>
+            <li>Budget allocation and variance reports</li>
+            <li>Year-over-year growth comparison</li>
+            <li>Financial KPI summary cards</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">Financial Analytics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal 7 -->
+<div id="project-modal-7" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Marketing Campaign Dashboard</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project7.jpg" class="project-image-large" alt="Marketing Campaign Dashboard">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>This dashboard provides a comprehensive overview of marketing campaign effectiveness, including reach, conversion rates, and ROI. It allows teams to analyze multi-channel performance and optimize marketing spend.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Channel-wise performance tracking</li>
+            <li>Campaign ROI visualization</li>
+            <li>Lead-to-sale conversion funnel</li>
+            <li>Customer acquisition cost monitoring</li>
+            <li>Ad spend vs. conversion trend analysis</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">Power BI</span>
+          <span class="tech-tag">Marketing Analytics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal 8 -->
+<div id="project-modal-8" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Clinic Operations Dashboard</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project8.jpg" class="project-image-large" alt="Clinic Operations Dashboard">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>The Clinic Operations Dashboard tracks patient flow, appointment trends, doctor performance, and resource utilization. It supports healthcare administrators in enhancing patient care and operational efficiency.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Daily patient visit and appointment tracking</li>
+            <li>Doctor workload and performance metrics</li>
+            <li>Departmental efficiency reports</li>
+            <li>Wait-time and satisfaction analysis</li>
+            <li>Revenue summary and billing insights</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">MATLAB</span>
+          <span class="tech-tag">Excel</span>
+          <span class="tech-tag">Healthcare Analytics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Project Modal 9 -->
+<div id="project-modal-9" class="project-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title">Recruitment Funnel Dashboard</h2>
+      <button class="close-modal">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="project-image-container">
+        <img src="./images/project9.jpg" class="project-image-large" alt="Recruitment Funnel Dashboard">
+      </div>
+      <div class="project-details">
+        <div class="project-summary">
+          <h3>Project Summary</h3>
+          <p>The Recruitment Funnel Dashboard visualizes the entire hiring process — from application to onboarding. It highlights hiring bottlenecks, conversion rates, and recruiter efficiency to enhance HR decision-making.</p>
+        </div>
+        <div class="project-features">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Candidate pipeline visualization</li>
+            <li>Stage-wise conversion rates</li>
+            <li>Recruiter performance tracking</li>
+            <li>Hiring source effectiveness analysis</li>
+            <li>Time-to-hire and cost-per-hire metrics</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-tech">
+        <h4>Technologies Used</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Tableau</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Data Automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- project section end -->
+
 
     <section
       class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img"
@@ -1096,6 +1580,7 @@ Worked in a remote capacity at JSSA, supporting data initiatives and strategic d
       </svg>
     </div>
 
+    
     <script>
       document.querySelector(".submit").addEventListener("click", function () {
         const email = document
@@ -1145,5 +1630,56 @@ Worked in a remote capacity at JSSA, supporting data initiatives and strategic d
     <script src="js/scrollax.min.js"></script>
 
     <script src="js/main.js"></script>
+     <script>
+    // Project Modal Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all project items
+      const projectItems = document.querySelectorAll('.project-item');
+      
+      // Add click event to each project item
+      projectItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const projectId = this.getAttribute('data-project');
+          const modal = document.getElementById(`project-modal-${projectId}`);
+          
+          if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+          }
+        });
+      });
+      
+      // Close modal when clicking the close button
+      const closeButtons = document.querySelectorAll('.close-modal');
+      closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const modal = this.closest('.project-modal');
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto'; // Re-enable scrolling
+        });
+      });
+      
+      // Close modal when clicking outside the content
+      const modals = document.querySelectorAll('.project-modal');
+      modals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+          if (e.target === this) {
+            this.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+          }
+        });
+      });
+      
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          modals.forEach(modal => {
+            modal.style.display = 'none';
+          });
+          document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+      });
+    });
+  </script>
   </body>
 </html>
